@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+    <p id="zz">
+        <input type="text" name="txt1" id="txt1"><br><br>
+        <button type="btn" name="btna" id="b" onclick="clearData()">AC</button>
+        <button type="btn" name="btnaa" id="b" onclick="clearLast()">C</button>
+        <button type="btn" name="btnmo" id="b" onclick="dispData('%')">%</button>
+        <button type="btn" name="btndiv" id="k" onclick="dispData('/')">/</button>      <br><br>
+
+        <button type="btn" name="btn7" id="bb" onclick="dispData('7')">7</button>
+        <button type="btn" name="btn8" id="bb" onclick="dispData('8')">8</button>
+        <button type="btn" name="btn9" id="bb" onclick="dispData('9')">9</button>
+        <button type="btn" name="btnmul" id="kk"  onclick="dispData('*')">*</button>          <br><br>
+
+        <button type="btn" name="btn1" id="bb" onclick="dispData('4')">4</button>
+        <button type="btn" name="btn1" id="bb" onclick="dispData('5')">5</button>
+        <button type="btn" name="btn1" id="bb" onclick="dispData('6')">6</button>
+        <button type="btn" name="btnsub" id="k" onclick="dispData('-')">-</button>         <br><br>
+
+        <button type="btn" name="btn1" id="bb" onclick="dispData('1')">1</button>
+        <button type="btn" name="btn1" id="bb" onclick="dispData('2')">2</button>
+        <button type="btn" name="btn1" id="bb" onclick="dispData('3')">3</button>
+        <button type="btn" name="btnadd" id="k" onclick="dispData('+')">+</button>        <br><br>
+
+        <button type="btn" name="btn1" id="z" onclick="dispData('0')">0</button>
+        <button type="btn" name="btnd" id="bb" onclick="dispData('.')">.</button>
+        <button type="btn" name="btnc" id="k" onclick="finalData('=')">=</button>
+    </p>
+</center>
+    <!-- <button type="btn" name="btn1" onclick="dispdata('1')">1</button> -->
+    <script>
+        let txt = '';
+        function dispData(opr) {
+            txt += opr;
+            document.getElementById("txt1").value = txt;
+        }
+        function finalData() {
+            let data = document.getElementById("txt1").value = txt;
+            let result = eval(data)
+            document.getElementById("txt1").value = result;
+        }
+        function clearData() {
+            txt = '';
+            let data = document.getElementById("txt1").value = txt;
+        }
+        function clearLast() {
+            k2 = document.getElementById("txt1").value
+            k3 = k2.slice(0, k2.length - 1)
+            document.getElementById('txt1').value = k3;
+            txt = '';
+        }
+    </script>
+</body>
+</html>
